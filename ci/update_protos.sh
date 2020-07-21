@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-set -eu -o pipefail
+set -eux -o pipefail
 prototool lint
 cd /mnt
 
@@ -12,8 +12,4 @@ cd /mnt/build/fabric-protos-go
 go mod tidy
 go build ./...
 git diff --color
-
-echo "Pushing code to [github.com/FabricGDPR/fabric-protos-go]"
-git status | grep ".pb.go$" | awk '{print $NF}' | xargs git add
-git commit -m "test"
 
