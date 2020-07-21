@@ -10,7 +10,7 @@ git config user.name "fabric-gdpr"
 git config user.email "<>"
 
 [ -d ~/.ssh ] || mkdir ~/.ssh
-echo ${GITHUB_PASSWORD} | sed "s/ /\n/g" | base64 --decode > ~/.ssh/id_rsa
+echo ${GDPR_PASSWORD} | sed "s/ /\n/g" | base64 --decode > ~/.ssh/id_rsa
 chmod 700 .ssh
 chmod 600 .ssh/id_rsa
 
