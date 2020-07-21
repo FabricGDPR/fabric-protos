@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo ${DUMMY}
+
 set -eu -o pipefail
 prototool lint
 cd /mnt
