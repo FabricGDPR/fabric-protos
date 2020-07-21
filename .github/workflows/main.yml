@@ -12,5 +12,5 @@ jobs:
     - name: Push protobuf updates to fabric-protos-go
       run:  make update
       env: 
-        GITHUB_PASSWORD: ${{ secrets.gdpr }}
+        GDPR_PASSWORD: ${{ secrets.gdpr }}
 
