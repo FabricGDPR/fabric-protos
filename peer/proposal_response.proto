@@ -38,6 +38,14 @@ message ProposalResponse {
     // The endorsement of the proposal, basically
     // the endorser's signature over the payload
     Endorsement endorsement = 6;
+
+
+    PreimageSpace preimage_space = 7;
+
+}
+
+message PreimageSpace {
+    repeated bytes value_writes = 1;
 }
 
 // A response with a representation similar to an HTTP response that can
