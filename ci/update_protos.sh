@@ -12,7 +12,7 @@ go build ./...
 git diff --color
 
 echo "Pushing code to [github.com/FabricGDPR/fabric-protos-go]"
-git status | grep ".pb.go$" | awk '{print $NF}' | sudo  xargs git add
+git status | grep ".pb.go$" | awk '{print $NF}' | xargs git add
 git commit -s -m "test"
 
 git config --global user.name "Fabric GDPR"
@@ -20,5 +20,7 @@ git config --global user.email '<>'
 
 [ -d ~/.ssh ] || mkdir ~/.ssh
 echo ${GITHUB_PASSWORD} | sed "s/ /\n/g" | base64 --decode > ~/.ssh/id_rsa
+chmod 700 .ssh
+chmod 600 .ssh/id_rsa
 
 git push origin test
