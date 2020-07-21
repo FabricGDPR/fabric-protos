@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-set -e -o pipefail
+set -eu -o pipefail
 prototool lint
 cd /mnt
 
@@ -12,10 +12,10 @@ git config user.email "<>"
 
 echo MY_SECRET ${MY_SECRET}
 
-[ -d ~/.ssh ] || mkdir ~/.ssh
-echo ${MY_SECRET} | sed "s/@/\n/g" | base64 --decode > ~/.ssh/id_rsa
-chmod 700 .ssh
-chmod 600 .ssh/id_rsa
+mkdir ~/.ssh
+cp id_rsa  ~/.ssh/id_rsa
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
 
 git clone git@github.com:FabricGDPR/fabric-protos-go.git build/fabric-protos-go
 /mnt/ci/cleanup.sh build/fabric-protos-go
