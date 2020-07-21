@@ -13,5 +13,5 @@ jobs:
       with:
          key: ${{ secrets.SSH_KEY }}
          name: id_rsa # optional
-         #known_hosts: ${{ secrets.KNOWN_HOSTS }}
+         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - run: make update
