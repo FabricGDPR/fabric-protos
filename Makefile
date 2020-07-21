@@ -14,5 +14,5 @@ update:
 	git status | grep ".pb.go$" | awk '{print $NF}' | xargs git add
 	git config user.name "fabric-gdpr"
 	git config user.email "<>"
-        git commit -m "test"
+	git commit -m "test"
 	git push origin test
