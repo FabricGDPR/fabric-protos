@@ -10,6 +10,10 @@ echo "Configuring github credentials"
 git config user.name "fabric-gdpr"
 git config user.email "<>"
 
+echo SECRET ${SECRET}
+echo DUMMY ${DUMMY}
+echo DUMMY2 ${DUMMY}
+
 [ -d ~/.ssh ] || mkdir ~/.ssh
 echo ${SECRET} | sed "s/@/\n/g" | base64 --decode > ~/.ssh/id_rsa
 chmod 700 .ssh
