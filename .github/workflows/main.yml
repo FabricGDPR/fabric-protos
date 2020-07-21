@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
     - name: Push protobuf updates to fabric-protos-go
+      uses: actions/checkout@v1
       with:
         key: ${{ secrets.SSH_KEY }}
       run:  make update
