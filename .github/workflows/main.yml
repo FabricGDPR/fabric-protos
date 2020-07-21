@@ -11,7 +11,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Push protobuf updates to fabric-protos-go
       env:
-        DUMMY: ${{ secrets.dummy }}
-        SECRET: $${{ secrets.secret }}
-        DUMMY2: ${{ secrets.dummy }}
+        MY_SECRET: $${{ secrets.my_secret }}
       run:  make update
