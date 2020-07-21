@@ -8,5 +8,4 @@ all:
 update:
 	echo "Running post merge job: Push to fabric-protos-go"
 	docker build - < ci/Dockerfile -t protobuilder
-	echo ${DUMMY}
 	docker run  -v `pwd`:/mnt protobuilder /mnt/ci/update_protos.sh

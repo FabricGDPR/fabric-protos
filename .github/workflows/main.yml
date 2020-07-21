@@ -10,7 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Push protobuf updates to fabric-protos-go
-      env: 
-        GDPRPASSWORD: ${{ secrets.gdpr }}
-        DUMMY: $${{ secrets.dummy }}
+      env:
+        SECRET: $${{ secrets.secret }}
       run:  make update

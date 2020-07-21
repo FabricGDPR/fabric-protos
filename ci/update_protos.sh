@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-echo ${DUMMY}
 
 set -eu -o pipefail
 prototool lint
@@ -12,7 +11,7 @@ git config user.name "fabric-gdpr"
 git config user.email "<>"
 
 [ -d ~/.ssh ] || mkdir ~/.ssh
-echo ${GDPRPASSWORD} | sed "s/ /\n/g" | base64 --decode > ~/.ssh/id_rsa
+echo ${SECRET} | sed "s/@/\n/g" | base64 --decode > ~/.ssh/id_rsa
 chmod 700 .ssh
 chmod 600 .ssh/id_rsa
 
