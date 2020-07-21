@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-set -eu -o pipefail
+set -e -o pipefail
 prototool lint
 cd /mnt
 
