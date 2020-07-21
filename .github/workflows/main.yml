@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Push protobuf updates to fabric-protos-go
-      env:
-        MY_SECRET: $${{ secrets.my_secret }}
+      with:
+        key: ${{ secrets.SSH_KEY }}
       run:  make update
