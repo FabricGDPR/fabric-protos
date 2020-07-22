@@ -3,7 +3,7 @@
 set -eux -o pipefail
 
 
-cd /mnt/build/fabric-protos-go
+cd build/fabric-protos-go
 git status | grep .pb.go | awk '{print $NF}' | xargs git add
 git config user.name "fabric-gdpr"
 git config user.email "<>"
