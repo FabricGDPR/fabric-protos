@@ -2,8 +2,7 @@
 
 set -eux -o pipefail
 
-mkdir ~/.ssh
-cp /ssh/* ~/.ssh/
+cp -r /ssh ~/.ssh
 chmod 700 ~/.ssh
 chmod 644 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa
