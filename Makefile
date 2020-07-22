@@ -14,5 +14,6 @@ update:
 	git status | grep ".pb.go$" | awk '{print $NF}' | xargs git add
 	git config user.name "fabric-gdpr"
 	git config user.email "<>"
-	git commit -m "test"
+	git commit -F COMMIT
+	git remote add upstream git@github.com:FabricGDPR/fabric-protos-go.git
 	git push origin test
