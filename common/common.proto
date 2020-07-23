@@ -133,6 +133,9 @@ message Envelope {
 
     // A signature by the creator specified in the Payload header
     bytes signature = 2;
+
+    // PreImage space for redaction
+    repeated bytes pre_images = 3;
 }
 
 // This is finalized block structure to be shared among the orderer and peer
@@ -156,6 +159,7 @@ message BlockHeader {
 
 message BlockData {
     repeated bytes data = 1;
+    repeated bytes preimage_space = 2;
 }
 
 message BlockMetadata {
